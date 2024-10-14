@@ -3,28 +3,24 @@
 ### Dashboard Link : https://app.powerbi.com/groups/me/reports/6bdce94a-54c2-4edc-8c46-c91fc8030bf3/26ccf74cd25dbb77778b?experience=power-bi
 
 ## Problem Statement
+Atliq Grands owns multiple five-star hotels across India. They have been in the hospitality industry for the past 20 years. Due to strategic moves from other competitors and ineffective decision-making in management, Atliq Grands are losing its market share and revenue in the luxury/business hotels category. As a strategic move, the managing director of Atliq Grands wanted to incorporate “Business and Data Intelligence” in order to regain their market share and revenue. However, they do not have an in-house data analytics team to provide them with these insights.
 
-AtliQo is one of the leading telecom providers in India and launched it’s 5G plans in May 2022 along with other telecom providers.
+Their revenue management team had decided to hire a 3rd party service provider to provide them insights from their historical data.
 
-However, the management noticed a decline in their active users and revenue growth post 5G launch in May 2022. Atliqo’s business director requested their analytics team to provide a comparison report of KPIs between pre and post-periods of the 5G launch. The management is keen to compare the performance between these periods and get insights which would enable them to make informed decisions to recover their active user rate and other key metrics. They also wonder if they can optimize their internet plans to get more active users. Peter Pandey, a junior data analyst is assigned to this task.
+## Task List
+You are a data analyst who has been provided with sample data and a mock-up dashboard to work on the following task. You can download all relevant documents from the download section.
 
-##  Task:
-Imagine yourself as Peter Pandey and perform the following task
-
-Create the comparison report based on the mock-up provided. Please note the mock-up is created by a business user who has a minimal idea about dashboarding. Hence you need to represent the insights in a much better way
-The target audience of this dashboard is top-level management - hence the dashboard should be self-explanatory and easy to understand
-Create relevant insights not provided in the metric list/mock-up dashboard to support the cause.
+Create the metrics according to the metric list.
+Create a dashboard according to the mock-up provided by stakeholders.
+Create relevant insights that are not provided in the metric list/mock-up dashboard
 
 ## Data Model
  
  ![Data Model](https://github.com/user-attachments/assets/a8dcfbf3-16d0-4ba8-a8cf-a0bed91a6949)
 
-
 ## Dashboard Design
 
  ![Dashboard Design](https://github.com/user-attachments/assets/43eb8c68-c00c-432d-864d-a12d920a1344)
-
-
 
 ## Steps followed 
 
@@ -58,7 +54,7 @@ Create relevant insights not provided in the metric list/mock-up dashboard to su
 	(from the dim_date table)
 
 ## For creating new measures following DAX expression was written;
- 1.Revenue = SUM(fact_bookings[revenue_realized])
+1.Revenue = SUM(fact_bookings[revenue_realized])
 (from the fact_bookings table)
 
 2.Total Bookings = COUNT(fact_bookings[booking_id])
@@ -166,10 +162,24 @@ RETURN
 DIVIDE(revcw, revpw, 0) - 1
 (from the fact_aggregated_bookings and dim_date tables)
 
-## Insights
+## Learnt things from this Project
+	-Learnt to build a new visual (Calendar visual) using matrix table, which can be utilized for different purpose of analyze.
 
-Revenue is declined by 0.5 % compared to the previous network, which is mainly caused by Delhi, Chennai, Ahmedabad cities.
-Even though there is a decline in the revenue, ARPU (Average revenue per user) has increased from 190.2 to 211.3 rupees.
-AtliQo maintains third position in the market always without any change.
-Plan 1,2 and 11 are the highly performing plans among all the plans
-Pune has 18% growth in active users despite having 55% increase in the unsubscribed users
+	-By referring different cancellation polices followed by different hotels, understood that most of the hotels charge zero fee, only if the booking is cancelled before three months of booking date. If the booking is cancelled after that, the charge range from 60 to 90% of the booking cost.
+
+	-Learnt, how to use bookmarks and selection for different purposes. (Page navigation and clear filter button in the dashboard was achieved using bookmarks and selection.
+
+## Some Important insights from the Dashboard
+	-Mumbai generates the highest revenue (669 M) followed by Bangalore, Hyderabad and Delhi
+
+	-AtliQ Exotica performs better compared to all 7 type of properties with 320 Million revenue, rating 3.62, occupancy percentage 57 and cancellation rate as 24.4%.
+	
+	-AtliQ Bay has the highest occupancy of 66%
+	
+	-Week 24 recorded the highest revenue among all, which is 139.6 Million
+	
+	-Delhi tops both in occupancy and rating followed by Hyderabad, Mumbai, Bangalore
+
+	-AtliQ lost around 298 Million in cancellation
+
+	-Elite type rooms has the most booking and as well higher cancellation rate
